@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yassin 🖤</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel&display=swap');
+body{min-height:100vh;background:#050505;display:flex;justify-content:center;align-items:center;overflow:hidden;color:#ffb3b3;font-family:'Cinzel',serif}
+.card{width:90%;max-width:380px;background:linear-gradient(180deg,rgba(30,10,10,0.95),rgba(5,5,5,0.98));border:1px solid #ff2e634d;border-radius:24px;padding:28px 20px;box-shadow:0 0 40px #ff2e6340;text-align:center;z-index:2}
+h1{font-family:'UnifrakturMaguntia';font-size:58px;color:#ff2e63;text-shadow:0 0 15px #ff2e63}
+.btn{background:linear-gradient(90deg,#ff2e63,#8a0a2a);color:white;border:none;padding:13px 28px;border-radius:30px;font-weight:700;cursor:pointer;width:100%;margin-top:12px}
+.heart{position:absolute;animation:fall linear forwards}
+@keyframes fall{0%{transform:translateY(-10vh);opacity:1}100%{transform:translateY(110vh);opacity:0}}
+</style>
+</head>
+<body>
+<audio id="mySong" loop><source src="song.mp3" type="audio/mpeg"></audio>
+<div class="card">
+<div style="font-size:32px">🥀 🖤 🥀</div>
+<h1>Yassin</h1>
+<div id="typeText" style="border:1px dashed #ff2e6330;padding:16px;border-radius:12px;margin:18px 0;background:rgba(0,0,0,0.4);color:#ff6b8a;font-family:'UnifrakturMaguntia';font-size:18px">Such a lonely day... but not with you 🖤</div>
+<button class="btn" onclick="explode()">♡ Play Our Song ♡</button>
+<div style="font-size:12px;color:#ff6b8a;margin-top:10px">🎵 Lonely Day - System Of A Down 🎵</div>
+</div>
+<script>
+function spawn(){const el=document.createElement('div');el.className='heart';el.innerHTML=['🖤','🥀','🌹'][Math.floor(Math.random()*3)];el.style.left=Math.random()*100+'vw';el.style.top='-5vh';el.style.fontSize='20px';el.style.animationDuration='4s';document.body.appendChild(el);setTimeout(()=>el.remove(),6000)}
+setInterval(spawn,250);
+function explode(){for(let i=0;i<20;i++) setTimeout(spawn,i*80);document.getElementById('mySong').play()}
+</script>
+</body>
+</html>
